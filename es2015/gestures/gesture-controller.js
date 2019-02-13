@@ -35,7 +35,6 @@ export class GestureController {
         this._app = _app;
         this.id = 1;
         this.requestedStart = {};
-        this.disabledGestures = {};
         this.disabledScroll = new Set();
         this.capturedID = null;
     }

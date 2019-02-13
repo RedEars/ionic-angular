@@ -307,13 +307,13 @@ var __extends = (this && this.__extends) || (function () {
          * @hidden
          */
         Tab.prototype.setSelected = function (isSelected, shouldDetach) {
-            if (shouldDetach === void 0) { shouldDetach = false; }
+            if (shouldDetach === void 0) { shouldDetach = true; }
             this.isSelected = isSelected;
-            this.setElementClass('show-tab', isSelected);
-            this.setElementAttribute('aria-hidden', (!isSelected).toString());
-            if (shouldDetach) {
+            if (!shouldDetach) {
                 return;
             }
+            this.setElementClass('show-tab', isSelected);
+            this.setElementAttribute('aria-hidden', (!isSelected).toString());
             if (isSelected) {
                 // this is the selected tab, detect changes
                 this._cd.reattach();

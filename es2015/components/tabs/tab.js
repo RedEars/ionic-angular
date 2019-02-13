@@ -265,13 +265,13 @@ export class Tab extends NavControllerBase {
     /**
      * @hidden
      */
-    setSelected(isSelected, shouldDetach = false) {
+    setSelected(isSelected, shouldDetach = true) {
         this.isSelected = isSelected;
-        this.setElementClass('show-tab', isSelected);
-        this.setElementAttribute('aria-hidden', (!isSelected).toString());
-        if (shouldDetach) {
+        if (!shouldDetach) {
             return;
         }
+        this.setElementClass('show-tab', isSelected);
+        this.setElementAttribute('aria-hidden', (!isSelected).toString());
         if (isSelected) {
             // this is the selected tab, detect changes
             this._cd.reattach();

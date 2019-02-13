@@ -29334,7 +29334,6 @@ var GestureController = (function () {
         this._app = _app;
         this.id = 1;
         this.requestedStart = {};
-        this.disabledGestures = {};
         this.disabledScroll = new Set();
         this.capturedID = null;
     }
@@ -61511,13 +61510,13 @@ var Tab = (function (_super) {
      * @hidden
      */
     Tab.prototype.setSelected = function (isSelected, shouldDetach) {
-        if (shouldDetach === void 0) { shouldDetach = false; }
+        if (shouldDetach === void 0) { shouldDetach = true; }
         this.isSelected = isSelected;
-        this.setElementClass('show-tab', isSelected);
-        this.setElementAttribute('aria-hidden', (!isSelected).toString());
-        if (shouldDetach) {
+        if (!shouldDetach) {
             return;
         }
+        this.setElementClass('show-tab', isSelected);
+        this.setElementAttribute('aria-hidden', (!isSelected).toString());
         if (isSelected) {
             // this is the selected tab, detect changes
             this._cd.reattach();
