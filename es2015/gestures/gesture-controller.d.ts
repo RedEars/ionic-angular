@@ -45,7 +45,9 @@ export declare class GestureController {
     private _app;
     private id;
     private requestedStart;
-    disabledGestures: any;
+    disabledGestures: {
+        [eventName: string]: Set<number>;
+    };
     private disabledScroll;
     private capturedID;
     constructor(_app: App);
