@@ -95,7 +95,7 @@ export class IOSTransition extends PageTransition {
             // leaving content
             const leavingPageEle = leavingView.pageRef().nativeElement;
             const leavingContent = new Animation(plt, leavingView.contentRef());
-            leavingContent.element(leavingPageEle.querySelectorAll('ion-header > *:not(ion-navbar),ion-footer > *'));
+            leavingContent.element(leavingPageEle.querySelectorAll('ion-header > *:not(ion-navbar),ion-footer'));
             this.add(leavingContent);
             if (backDirection) {
                 // leaving content, back direction

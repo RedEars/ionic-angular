@@ -120,7 +120,7 @@ var __extends = (this && this.__extends) || (function () {
                 // leaving content
                 var leavingPageEle = leavingView.pageRef().nativeElement;
                 var leavingContent = new animation_1.Animation(plt, leavingView.contentRef());
-                leavingContent.element(leavingPageEle.querySelectorAll('ion-header > *:not(ion-navbar),ion-footer > *'));
+                leavingContent.element(leavingPageEle.querySelectorAll('ion-header > *:not(ion-navbar),ion-footer'));
                 this.add(leavingContent);
                 if (backDirection) {
                     // leaving content, back direction
